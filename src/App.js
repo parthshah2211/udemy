@@ -10,6 +10,7 @@ import { AppBar, Toolbar } from '@mui/material';
 import { makeStyles } from '@mui/styles';
 import ContentCard from './component/card/card';
 import Content from './component/content/content.jsx'
+import Footer from './component/footer/footer';
 
 
 function App(email,password) {   
@@ -26,6 +27,7 @@ const useStyles =makeStyles({
     {/* <LeftMenu></LeftMenu>  */}
  <Layout></Layout> 
  <Content></Content>
+ <Footer></Footer>
     </div>
 
   </>
