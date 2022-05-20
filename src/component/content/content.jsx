@@ -4,6 +4,7 @@ import ContentCard from "../card/card"
 import MediaCard from "../card/imageCard";
 import ImageCard from "../imageCard/imageCard";
 import ListCard from "../listCard/listCard";
+import ProfileCard from './../imageCard/imageCard1';
 const content=()=>{
     
 const cardStyle={
@@ -101,7 +102,8 @@ style={typographyStyle}
 </Stack>
     </Grid>
 </Grid>
-<ListCard></ListCard>
+            <ListCard></ListCard>
+             <ProfileCard></ProfileCard>
 </>
     );
 }

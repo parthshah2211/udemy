@@ -24,7 +24,6 @@ return(
         bgcolor: '#f7f9fa',
         borderRadius: 1,
       }}>
-
            <Typography variant="h4"  style={typographyStyle}>
            Featured topics by category
 </Typography>

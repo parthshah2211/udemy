@@ -100,7 +100,7 @@ Contact Us
                             >English</Button>
                             </Stack>                   
 </Grid>
-    </Grid>
+</Grid>
 </Box>
         </>
     )
