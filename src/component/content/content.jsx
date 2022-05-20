@@ -2,7 +2,9 @@ import { Grid, Stack, Typography,Button } from "@mui/material";
 import React from "react";
 import ContentCard from "../card/card"
 import MediaCard from "../card/imageCard";
+import BusinessCard from "../imageCard/businessCard";
 import ImageCard from "../imageCard/imageCard";
+import FindOutCard from "../imageCard/imagecard2";
 import ListCard from "../listCard/listCard";
 import ProfileCard from './../imageCard/imageCard1';
 const content=()=>{
@@ -103,7 +105,9 @@ style={typographyStyle}
     </Grid>
 </Grid>
             <ListCard></ListCard>
-             <ProfileCard></ProfileCard>
+            <ProfileCard></ProfileCard>
+             <BusinessCard></BusinessCard>
+            <FindOutCard></FindOutCard> 
 </>
     );
 }
