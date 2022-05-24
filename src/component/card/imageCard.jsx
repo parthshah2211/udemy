@@ -7,6 +7,7 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import StarIcon from '@mui/icons-material/Star';
 import { spacing } from '@mui/system';
+import { Rating, Stack } from '@mui/material';
 
 const MediaCard=()=> {
 
@@ -33,22 +34,21 @@ const typographyStyle={
         <Typography variant="body2" color="text.secondary">
         Avinash Jain, The Codex
                </Typography>
-      
-      <Typography gutterBottom variant="h9" color="red" 
+          <Stack spacing={3} align="center" direction="column">
+             <Typography gutterBottom variant="h9" color="red" 
       style={typographyStyle}        
-       component="div">4.3
+       component="div">4.5
        <span>
-      <StarIcon></StarIcon></span>
-         <span>
-      <StarIcon></StarIcon></span>
-         <span>
-      <StarIcon></StarIcon></span>
+    <Rating name="half-rating-read" defaultValue={4.5} precision={0.5} readOnly />
+            </span>
       <Typography  variant="h9" color={'black'} >(2,160)</Typography>
       </Typography>
-      <Typography variant="h5" style={typographyStyle}>
+          </Stack>
+          <Typography variant="h5" style={typographyStyle}>
       ₹385
     </Typography>
-  </CardContent>
+
+       </CardContent>
     </Card>
   );
 }

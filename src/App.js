@@ -1,37 +1,56 @@
 import React from 'react';
-// import logo from './logo.svg';
+
 import PropTypes from 'prop-types'; // ES6
-// import { Counter } from '../src/redux/features/counter/Counter';
 import './App.css';
 import Form from './component/form/form';
-import LeftMenu from './component/layout/leftMenue/leftMenu';
 import Layout from './component/layout/layout';
-import { AppBar, Toolbar } from '@mui/material';
-import { makeStyles } from '@mui/styles';
-import ContentCard from './component/card/card';
+import { AppBar, Toolbar, Typography } from '@mui/material';
+// import ContentCard from './component/card/card';
 import Content from './component/content/content.jsx'
 import Footer from './component/footer/footer';
+// import Hook from './component/layout/leftMenue/leftMenu';
+// import { ThemeProvider } from '@material-ui/styles';
+import { theme } from './theme'; 
+import { useTheme } from '@emotion/react';
 
-
-function App(email,password) {   
-const useStyles =makeStyles({
-  appMain:{
-    paddingLeft:'320PX',
-    width:'100%t'
-  }
-})
-
+import { ThemeProvider } from '@mui/material/styles';
+function App() {   
+  console.log(theme);
   return (
-    <>
-    <div className={useStyles.appMain}>     
-    {/* <LeftMenu></LeftMenu>  */}
- <Layout></Layout> 
+      <>
+  
+  <ThemeProvider theme={theme}>
+        <div>     
+          
+          <Button>sa</Button>
+          <Header></Header>
+    
+          <Layout></Layout> 
  <Content></Content>
- <Footer></Footer>
+        <Footer color="primary"></Footer> 
+  
     </div>
-
+ </ThemeProvider>
   </>
   );
 }
 
 export default App;
+
+// import React from 'react';
+import { Button } from '@mui/material';
+import Header from './component/layout/header/header';
+// import { Button } from '@material-ui/core';
+
+
+// const App = () => {
+//   return (
+//     <ThemeProvider theme={theme}>
+//       <Button variant="contained" color="secondary">
+//         Secondary
+//       </Button>
+//     </ThemeProvider>
+//   );
+// }
+
+// export default App;

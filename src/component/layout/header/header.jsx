@@ -1,70 +1,92 @@
-import LanguageIcon from '@mui/icons-material/Language';
-import { AppBar, Grid, IconButton, Toolbar,Badge, Box, Button, Stack, Typography, InputBase } from '@mui/material';
-import MailIcon from '@mui/icons-material/Mail';
-import { border, fontSize } from '@mui/system';
-import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
-import { Image, LoginRounded } from '@mui/icons-material';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-// import { useStyles } from './headerStyle';
-import { makeStyles } from '@mui/styles';
+  
+import React, { useState } from "react";
+import {
+  AppBar,
+  Button,
+  IconButton,
+  InputBase,
+  Tab,
+  Tabs,
+  Toolbar,
+  Stack,
+  Typography,
+  useMediaQuery,
+} from "@mui/material";
+import { theme } from "../../../theme";
+import AddBusinessRoundedIcon from "@mui/icons-material/AddBusinessRounded";
+import DrawerComp from "./draweComp";
 import SearchIcon from '@mui/icons-material/Search';
-const Header =()=>{
-   const appBarStyle={
-        backgroundColor:'white',
-    }
-    const stackStyle={
-        marginLeft:'auto',
-        marginTop:'5px',
-    }
-    const serchBoxStyle={
-        opacity: '0.6',
-                            padding: '0px 8px' ,
-                            borderRadius: '50%' ,
-                            borderColor: 'primary.black',
+import { ShoppingCartCheckout } from "@mui/icons-material";
+import LanguageIcon from '@mui/icons-material/Language';
 
-    }
-    const typographyStyle={
-        marginTop:'5px'
-    }
-    return (
-        <>
-            <AppBar position="static"  style={appBarStyle}>
-            <Toolbar>
-                <Grid container align="center">
-                    <Grid item sm={7} >              
-                    <Stack spacing={2} direction="row" style={stackStyle}>
-                    <image src="/staticx/udemy/images/v7/logo-udemy.svg"
-                    style={{ 
-                        height: '20px',
-                        width: '20px'
-                    }} 
-                    ></image>
-                    <Typography color="common.black" >Categories</Typography>
-                    <InputBase placeholder="Serch"
-                    style={serchBoxStyle}
+const Header = () => {
+  const [value, setValue] = useState();
+
+  const isMatch = useMediaQuery(theme.breakpoints.down("xl"));
+  console.log(isMatch);
+  return (
+      <React.Fragment>         
+      <AppBar >
+        <Toolbar>
+          {isMatch ? (
+                      <>
+                            <DrawerComp />
+                           <img src="https://cdn2.downdetector.com/static/uploads/logo/UDEMY_3_0KKraw2.png" style={{ 
+                       height:'75px', width:'100px',marginLeft:'75px',marginTop:'10px',align:"center", direction:"row"
+                   }}></img> 
+            
+            </>
+          ) : (
+                          <>
+                              <img src="https://cdn2.downdetector.com/static/uploads/logo/UDEMY_3_0KKraw2.png" style={{ 
+                       height:'75px', width:'100px',marginLeft:'55px',marginTop:'10px'
+                   }}></img>           
+                <Tabs
+                  variant="hedderTab"               
+                indicatorColor="secondary"
+                textColor="inherit"
+                // value={value}
+                // onChange={(e, value) => setValue(value)}
+              >
+                                  <Tab label="categories" />
+                                  </Tabs>
+                                       <InputBase placeholder="Serch for Anything"
+                    variant="outlined"
                     startAdornment={<SearchIcon> 
                     </SearchIcon>}
-                    ></InputBase>
-                    </Stack>
-                    </Grid>
-                    <Grid item sm={5}>
-                    <Stack spacing={2} direction="row" style={{marginLeft:'auto'}}>
-                    <Typography color="common.black" style={typographyStyle}>udemy Business</Typography>
-                    <Typography color="common.black" style={typographyStyle}>Tech On Udemy</Typography>
-                    <IconButton >
-                        <ShoppingCartCheckoutIcon></ShoppingCartCheckoutIcon>
-                    </IconButton>
-                    <Button variant="outlined">Log In</Button>
-                    <Button variant="outlined" style={{backgroundColor:'black'}}>Sign Up</Button>
+                                  ></InputBase>
+                              <Tabs   variant="hedderTab"
+                indicatorColor=""
+                textColor="secondary"
+                // value={value}
+                // onChange={(e, value) => setValue(value)}
+ >
+                <Tab label="udemyBusiness" />
+                <Tab label="Tech On Udemy" />
+                              </Tabs>
+                              <Stack direction="row" spacing={2} variant="hedder">
+                                  <IconButton >
+                        <ShoppingCartCheckout></ShoppingCartCheckout>
+                              </IconButton>         
+                    <Button variant="outlined" color="secondary" >Log In</Button>
+                              <Button variant="outlined" color="primary" style={{ backgroundColor: "black" }}>Sign Up</Button>
  <IconButton style={{backgroundColor:'white'}}>
  <LanguageIcon></LanguageIcon>
 </IconButton>
-</Stack>
-                        </Grid>
-                </Grid>
-            </Toolbar>
-            </AppBar>
-        </>
-    )
-}
-export  default Header;
+                              </Stack>
+                              
+              {/* <Button sx={{ marginLeft: "auto" }} variant="contained">
+                Login
+              </Button>
+              <Button sx={{ marginLeft: "10px" }} variant="contained">
+                SignUp
+              </Button> */}
+            </>
+          )}
+        </Toolbar>
+      </AppBar>
+    </React.Fragment>
+  );
+};
+
+export default Header;

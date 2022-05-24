@@ -40,7 +40,6 @@ const FindOutCard = () => {
         marginLeft: '-300px',
         width: '48%',
         height: '450px',
-
     }}
     >
       <CardContent style={{padding:'22px',            

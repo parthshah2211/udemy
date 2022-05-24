@@ -1,4 +1,5 @@
-import { Box, Grid, Stack, Typography } from "@mui/material";
+import { Box, Grid, Stack, Typography,useMediaQuery } from "@mui/material";
+import { theme } from "../../theme";
 
 const ListCard=()=>{
 const typographyStyle={
@@ -12,7 +13,10 @@ const listStyle={
 const columnStyle={
     marginTop:'35px',
     marginLeft:'5px'
-}
+  }
+  const isMatch = useMediaQuery(theme.breakpoints.down("xl"));
+  console.log(isMatch);
+
 return(
     <Box sx={{
         display: 'flex',
@@ -22,14 +26,13 @@ return(
         width:'auto',
         m: 1,
         bgcolor: '#f7f9fa',
-        borderRadius: 1,
       }}>
            <Typography variant="h4"  style={typographyStyle}>
            Featured topics by category
 </Typography>
 
-
-<Grid container align="center" direction="row">
+    {isMatch ? (<></>) : (<>
+      <Grid container align="center" direction="row">
     <Grid item sm={3} >
     <Stack align="center" direction="column"  spacing={3} style={listStyle}>
     <Typography variant="h6"  >
@@ -135,8 +138,9 @@ return(
     </Typography>
     </Stack>
     </Grid>
-
        </Grid>
+
+</>)}
      </Box>
 )
 }

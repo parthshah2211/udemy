@@ -2,7 +2,6 @@ import React from "react";
 import { Box, Button, Grid, List, Stack, Typography } from '@mui/material';
 import LanguageIcon from '@mui/icons-material/Language';
 const Footer=()=>{
-
     const FooterStyle={
         marginLeft:'-135px',
         marginTop:'25px',
