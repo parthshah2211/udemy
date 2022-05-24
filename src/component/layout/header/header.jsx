@@ -20,8 +20,7 @@ import { ShoppingCartCheckout } from "@mui/icons-material";
 import LanguageIcon from '@mui/icons-material/Language';
 
 const Header = () => {
-  const [value, setValue] = useState();
-
+  
   const isMatch = useMediaQuery(theme.breakpoints.down("xl"));
   console.log(isMatch);
   return (
@@ -45,8 +44,6 @@ const Header = () => {
                   variant="hedderTab"               
                 indicatorColor="secondary"
                 textColor="inherit"
-                // value={value}
-                // onChange={(e, value) => setValue(value)}
               >
                                   <Tab label="categories" />
                                   </Tabs>

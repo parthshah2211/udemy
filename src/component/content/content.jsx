@@ -11,7 +11,7 @@ import ProfileCard from './../imageCard/imageCard1';
 
 const content = () => {
     
-  const [value, setValue] = useState();
+  const [value, setValue] = useState(0);
 const isMatch = useMediaQuery(theme.breakpoints.down("xl"));
 console.log(isMatch);
 const cardStyle={
@@ -44,7 +44,7 @@ const buttonStyle={
      style={{
          height:"300px",
          width:"1340px",
-         marginLeft:"102px",
+         marginLeft:"30px",
          marginTop:"250px"
      }}   
     >
@@ -55,17 +55,14 @@ const buttonStyle={
      
             </ContentCard>
 
-<Typography variant="h3" style={{ marginTop: "160px",
-                                  marginLeft:"180px"      
+<Typography variant="h3" style={{ 
+                                  marginLeft:"100px"      
 }}>A broad selection of courses</Typography>
 
-<Typography variant="h6" style={{ marginTop: "10px",
-                                  marginLeft:"180px"      
+<Typography variant="h6" style={{ 
+                                  marginLeft:"100px"      
 }}>Choose from 185,000 online video courses with new additions published every month</Typography>
 
-<Typography variant="h4" style={{ marginTop: "60px",
-                                  marginLeft:"95px"      
-}}>Expand your career opportunities with Python</Typography>
 
 <Typography     
 style={typographyStyle}  
@@ -74,7 +71,7 @@ style={typographyStyle}
                 indicatorColor="black"
                 textColor="secondary"
                 value={value}
-                onChange={(e, value) => setValue(value)}
+                onChange={(e, value) => setValue()}
  >
                 <Tab label="Pythone" />
                 <Tab label="Excle" />

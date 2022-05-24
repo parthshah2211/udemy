@@ -118,7 +118,6 @@ export const theme = createTheme({
      }
      }] 
    },
-   
   MuiInputBase: {
              variants: [{
      props: {variant:'outlined'},

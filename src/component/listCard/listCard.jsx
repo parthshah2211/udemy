@@ -1,7 +1,13 @@
-import { Box, Grid, Stack, Typography,useMediaQuery } from "@mui/material";
+import { Box, Grid, Stack, Typography,useMediaQuery,Tabs,Tab } from "@mui/material";
+import { useState } from "react";
 import { theme } from "../../theme";
 
-const ListCard=()=>{
+
+const ListCard = () => {
+  const [value, setValue] = useState(0);
+    const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
 const typographyStyle={
     marginTop:'45px',
     marginLeft:'95px'
@@ -31,7 +37,20 @@ return(
            Featured topics by category
 </Typography>
 
-    {isMatch ? (<></>) : (<>
+    {isMatch ? (<>
+       <Tabs
+        orientation="vertical"
+        value={value}
+        indicatorColor="black"
+        onChange={handleChange}
+
+      >
+        <Tab label="Development"  />
+        <Tab label="Business" />
+        <Tab label="IT And Software"  />
+        <Tab label="Design" />
+      </Tabs>
+    </>) : (<>
       <Grid container align="center" direction="row">
     <Grid item sm={3} >
     <Stack align="center" direction="column"  spacing={3} style={listStyle}>
